@@ -11,7 +11,6 @@ import android.os.AsyncTask;
 import android.os.AsyncTask.Status;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -23,13 +22,12 @@ import android.widget.TextView;
 
 import com.colorsampler.android.R;
 import com.colorsampler.android.camera.CameraManager;
+import com.colorsampler.android.camera.PreviewManager;
+import com.colorsampler.android.camera.PreviewManagerCallback;
 import com.colorsampler.android.color.CSColor;
 import com.colorsampler.android.color.ColorManager;
 import com.colorsampler.android.constants.Constants;
-import com.colorsampler.android.preview.PreviewManager;
-import com.colorsampler.android.preview.PreviewManagerCallback;
 import com.colorsampler.android.ui.CrosshairView;
-import com.colorsampler.android.ui.StrokeTextView;
 import com.colorsampler.android.xml.XMLParser;
 
 public class CameraActivity extends Activity implements PreviewManagerCallback, SurfaceHolder.Callback, OnTouchListener
@@ -83,16 +81,6 @@ public class CameraActivity extends Activity implements PreviewManagerCallback, 
         _cameraManager = new CameraManager(this, _cameraSurfaceView, _previewManager, this);
         
         _cameraInstructionsLabel.setText(getString(R.string.camera_instructions));
-    }
-
-    /**
-     * Called when the Options Menu is created
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.activity_camera, menu);
-        return true;
     }
 
     /**
@@ -172,7 +160,7 @@ public class CameraActivity extends Activity implements PreviewManagerCallback, 
                 _cameraManager.releaseCamera();
                 _cameraProgressBar.setVisibility(View.GONE);
                 
-                _errorManager.reportDialog(R.string.error_camera_access_title, 
+                _errorManager.alertDialog(R.string.error_camera_access_title, 
                                            e.getMessage(), 
                                            R.string.try_again_button,
                                            R.string.cancel_button);
@@ -209,7 +197,7 @@ public class CameraActivity extends Activity implements PreviewManagerCallback, 
                 _cameraManager.releaseCamera();
                 _cameraProgressBar.setVisibility(View.GONE);
                 
-                _errorManager.reportDialog(R.string.error_camera_setup_title, 
+                _errorManager.alertDialog(R.string.error_camera_setup_title, 
                                            _throwable.getMessage(), 
                                            R.string.try_again_button,
                                            R.string.cancel_button);
@@ -226,7 +214,7 @@ public class CameraActivity extends Activity implements PreviewManagerCallback, 
                 _cameraLoadingTask.cancel(true);
                 _cameraManager.releaseCamera();
                 
-                _errorManager.reportDialog(R.string.error_camera_show_title, 
+                _errorManager.alertDialog(R.string.error_camera_show_title, 
                                            t.getMessage(), 
                                            R.string.try_again_button,
                                            R.string.cancel_button);
@@ -370,7 +358,7 @@ public class CameraActivity extends Activity implements PreviewManagerCallback, 
             _cameraLoadingTask.cancel(true);
             _cameraManager.releaseCamera();
             
-            _errorManager.reportDialog(R.string.error_camera_show_title, 
+            _errorManager.alertDialog(R.string.error_camera_show_title, 
                                        t.getMessage(), 
                                        R.string.try_again_button,
                                        R.string.cancel_button);

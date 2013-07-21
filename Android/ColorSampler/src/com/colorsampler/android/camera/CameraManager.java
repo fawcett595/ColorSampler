@@ -16,7 +16,6 @@ import android.widget.RelativeLayout.LayoutParams;
 
 import com.colorsampler.android.R;
 import com.colorsampler.android.constants.Constants;
-import com.colorsampler.android.preview.PreviewManager;
 
 public class CameraManager implements PreviewCallback
 {
