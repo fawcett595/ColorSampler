@@ -1,0 +1,181 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingRight="0dp" >
+
+    <SurfaceView
+        android:id="@+id/CameraSurfaceView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true" />
+
+    <ProgressBar
+        android:id="@+id/CameraProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <com.colorsampler.android.ui.CrosshairView
+        android:id="@+id/CrossHairView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/TransparentBackground"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_weight="1"
+            android:baselineAligned="false"
+            android:gravity="center_horizontal" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/R"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/r"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/G"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/g"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/b"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/small_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/RedValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/undefined"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/GreenValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/undefined"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/small_text" />
+
+                <TextView
+                    android:id="@+id/BlueValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="3dp"
+                    android:text="@string/undefined"
+                    android:textColor="@color/White"
+                    android:textSize="@dimen/small_text" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/Hex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/hex"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/HexValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/undefined"
+                android:textColor="@color/White" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/ClosestMatch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/closestmatch"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/ClosestMatchValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/undefined"
+                android:textColor="@color/White" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/CameraCycleButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/small_margin"
+            android:layout_marginTop="@dimen/small_margin"
+            android:layout_weight="1"
+            android:text="@string/next_camera_button" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/CameraInstructionLabel"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        style="@style/TextStroke" />
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<resources>
+
+    <string name="app_name">Color Sampler</string>
+    <string name="menu_settings">Settings</string>
+    <string name="undefined">Undefined</string>
+    <string name="b">B:</string>
+    <string name="g">G:</string>
+    <string name="r">R:</string>
+    <string name="hex">Hex</string>
+    <string name="closestmatch">Closest Match</string>
+    <string name="next_camera_button">Next Camera</string>
+    
+    <string name="try_again_button">Try Again</string>
+    <string name="cancel_button">Cancel</string><string name="leave_feedback">Leave Feedback</string>
+    <string name="error_camera_access_title">Unable to access a camera</string>
+    <string name="error_camera_access_number">Unable to access camera number: </string>
+    <string name="error_message_from_system">Message from the system: </string>
+    <string name="error_supported_preview_size">Unable to find a supported camera size</string>
+    <string name="error_camera_show_title">Unable to show the camera</string>
+    <string name="error_camera_setup_title">Unable to setup the camera</string>
+    
+    <string name="error_colors_not_found">No colors found</string>
+    
+    <string name="camera_instructions">Tap the screen to freeze the camera</string>
+    
+    <string name="camera_instructions2">Tap the screen to unfreeze the camera</string>
+
+</resources>
